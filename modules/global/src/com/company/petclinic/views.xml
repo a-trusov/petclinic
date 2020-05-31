@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
+    <view entity="petclinic_Pet" name="pet-full-view" extends="_local">
+        <property name="type" view="_minimal"/>
+        <property name="owner" view="_minimal"/>
+    </view>
+    <view entity="petclinic_Veterinarian" name="veterinarian-with-usere-view" extends="_local">
+        <property name="user" view="_minimal"/>
+    </view>
+    <view entity="petclinic_Visit" name="visit-browse-view" extends="_local">
+        <property name="pet" view="_minimal"/>
+        <property name="veterinarian" view="_minimal">
+            <property name="user" view="_minimal"/>
+        </property>
+    </view>
+    <view entity="petclinic_Visit" name="visit-edit-view" extends="_local">
+        <property name="pet" view="_minimal"/>
+        <property name="veterinarian" view="veterinarian-with-usere-view"/>
+        <property name="consumables" view="_local"/>
+    </view>
 </views>
