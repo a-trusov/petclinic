@@ -1,5 +1,6 @@
 package com.company.petclinic.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.security.entity.User;
 
@@ -9,6 +10,7 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
+@NamePattern("%s|user")
 @Table(name = "PETCLINIC_VETERINARIAN")
 @Entity(name = "petclinic_Veterinarian")
 public class Veterinarian extends StandardEntity {
